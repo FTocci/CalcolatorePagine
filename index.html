@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcolatore Pagine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main>
+        <div id="container">
+            <h1>Calcolatore Pagine</h1>
+            <label for="total-pages">Numero totale di pagine mancanti:</label>
+            <input type="number" id="total-pages" name="total-pages" required>
+
+            <label for="exam-date">Giorno dell'esame:</label>
+            <input type="date" id="exam-date" name="exam-date" required>
+
+            <div style="height: 50px;"></div>
+            
+            <label for="margin-days">Vuoi dei giorni di margine per ripetere?</label>
+            <input type="checkbox" id="margin-days" name="margin-days" onclick="toggleMarginInput()">
+            
+            <div id="margin-input" style="display: none;">
+                <label for="days-margin">Numero di giorni di margine:</label>
+                <input type="number" id="days-margin" name="days-margin">
+            </div>
+            
+            <div style="height: 50px;"></div>
+            
+            <button id="calcola-btn" onclick="calcolaPagine(document.getElementById('exam-date').value, document.getElementById('days-margin').value)"
+                type="submit">Calcola</button>
+            
+            <div id="result"></div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
